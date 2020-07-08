@@ -1,0 +1,24 @@
+<div class="col-md-6 user-container">
+    <h2 style="margin: auto"> Task List</h2>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden"></th>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let task of tasks">
+        <td class="hidden"></td>
+        <td>{{task.title}}</td>
+        <td>{{task.description}}</td>
+        <td><button class="btn glyphicon glyphicon-trash btn-danger" 
+          (click)="deleteTask(task)" > Delete</button>
+          <button class="btn glyphicon glyphicon-edit btn-primary"  style="margin-left: 20px;" 
+          (click)="updateTask(task)"> Update</button></td>
+      </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary" style="width:150px" (click)="createTask()"> Add A New Task</button>
+</div>
